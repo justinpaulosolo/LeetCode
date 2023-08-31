@@ -1,6 +1,4 @@
-using System.Collections;
-
-namespace LeetCode;
+namespace LeetCode.Problems;
 
 public class P0049GroupAnagrams
 {
