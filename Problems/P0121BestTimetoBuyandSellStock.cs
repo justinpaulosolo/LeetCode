@@ -5,22 +5,16 @@ public class P0121BestTimetoBuyandSellStock
 {
     public int MaxProfit(int[] prices)
     {
-        var map = new Dictionary<int, int>();
+        var profit = 0;
+        var buyPrice = prices[0];
 
         for (var i = 0; i < prices.Length; i++)
         {
-            map.Add(prices[i], 0);
-            for (var j = i + 1; j < prices.Length; j++)
-            {
-                var profit = map[prices[i]] - prices[j];
-                if (map[prices[i]] < profit)
-                {
-                    map[prices[i]] = profit;
-                }
-            }
+            profit = Math.Max(profit, prices[i] - buyPrice);
+            buyPrice = Math.Min(buyPrice, prices[i]);
         }
 
-        return 0;
+        return profit;
     }
     
     [Theory]
