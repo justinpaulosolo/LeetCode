@@ -10,24 +10,28 @@ namespace LeetCode.Problems
     {
         public bool IsValid(string s)
         {
-            var map = new Dictionary<char, int>()
+            var map = new Dictionary<char, char>()
             {
-                {'(',0 },
-                {')',0 },
-                {'{',0 },
-                {'}',0 },
-                {'[',0 },
-                {']',0 },
+                { '(',')' },
+                { '{','}' },
+                { '[',']' },
             };
+
+            var stack = new Stack<char>();
 
             foreach (var item in s)
             {
-                map[item]++;
+                if (map.ContainsKey(item))
+                {
+                    stack.Push(item);
+                } else
+                {
+                    if (stack.Count == 0) return false;
+                    if (map[stack.Pop()] == item) continue;
+                    return false;
+                }
             }
-            int firstValue = map.First().Value;
-            bool allValuesSame = map.All(x => x.Value == firstValue);
-
-            return allValuesSame;
+            return stack.Count == 0;
         }
 
         [Theory]
