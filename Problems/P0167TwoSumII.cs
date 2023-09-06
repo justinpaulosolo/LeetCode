@@ -11,7 +11,7 @@ public class P0001TwoSumII
         return new int[] { };
     }
 
-    public int[] TwoSumSolution2(int[] numbers, int target)
+    public int[]? TwoSumSolution2(int[] numbers, int target)
     {
         var left = 0;
         var right = numbers.Length - 1;
