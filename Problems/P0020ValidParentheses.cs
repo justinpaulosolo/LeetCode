@@ -10,21 +10,22 @@ namespace LeetCode.Problems
     {
         public bool IsValid(string s)
         {
-            var map = new Dictionary<char, char>()
+            var map = new Dictionary<char, char>
             {
-                { '(',')' },
-                { '{','}' },
-                { '[',']' },
+                {'(', ')' },
+                {'[', ']' },
+                {'{', '}' },
             };
 
             var stack = new Stack<char>();
 
-            foreach (var item in s)
+            foreach(var item in s)
             {
                 if (map.ContainsKey(item))
                 {
                     stack.Push(item);
-                } else
+                }
+                else
                 {
                     if (stack.Count == 0) return false;
                     if (map[stack.Pop()] == item) continue;
