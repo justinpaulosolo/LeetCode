@@ -5,7 +5,7 @@ public class P0347TopKFrequentElements
     public int[] TopKFrequent(int[] nums, int k)
     {
         var dictionary = new Dictionary<int, int>();
-        var result = new int [k];
+        var result = new int[k];
 
         foreach (var num in nums)
             if (!dictionary.ContainsKey(num))

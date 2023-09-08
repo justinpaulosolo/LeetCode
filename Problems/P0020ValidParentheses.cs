@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LeetCode.Problems
+﻿namespace LeetCode.Problems
 {
     public class P0020ValidParentheses
     {
@@ -19,7 +13,7 @@ namespace LeetCode.Problems
 
             var stack = new Stack<char>();
 
-            foreach(var item in s)
+            foreach (var item in s)
             {
                 if (map.ContainsKey(item))
                 {
@@ -40,10 +34,10 @@ namespace LeetCode.Problems
         [InlineData("()[]{}", true)]
         [InlineData("(]", false)]
         public void Test(string s, bool expected)
-        { 
+        {
             Assert.Equal(IsValid(s), expected);
         }
     }
 
-    
+
 }

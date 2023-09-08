@@ -15,13 +15,13 @@ public class P0121BestTimetoBuyandSellStock
 
         return profit;
     }
-    
+
     [Theory]
-    [InlineData(new int[] { 7,1,5,3,6,4 }, 5)]
-    [InlineData(new int[] { 7,6,4,3,1 }, 0)]
+    [InlineData(new int[] { 7, 1, 5, 3, 6, 4 }, 5)]
+    [InlineData(new int[] { 7, 6, 4, 3, 1 }, 0)]
     public void Test(int[] prices, int expected)
     {
         Assert.Equal(MaxProfit(prices), expected);
     }
-    
+
 }

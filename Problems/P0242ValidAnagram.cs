@@ -5,7 +5,7 @@ public class P0242ValidAnagram
     public bool IsAnagram(string s, string t)
     {
         if (s.Length != t.Length) return false;
-        
+
         var hashmap = new Dictionary<char, int>();
 
         for (var i = 0; i < s.Length; i++)
@@ -16,10 +16,10 @@ public class P0242ValidAnagram
             hashmap[s[i]]++;
             hashmap[t[i]]--;
         }
-        
+
         return hashmap.Values.All(value => value == 0);
     }
-    
+
     [Theory]
     [InlineData("anagram", "nagaram", true)]
     [InlineData("rat", "cat", false)]

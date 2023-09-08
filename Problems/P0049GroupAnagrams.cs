@@ -5,8 +5,8 @@ public class P0049GroupAnagrams
     public IList<IList<string>> GroupAnagrams(string[] strs)
     {
         var dictionary = new Dictionary<string, List<string>>();
-        
-        foreach(var item in strs)
+
+        foreach (var item in strs)
         {
             var chars = item.ToCharArray();
             Array.Sort(chars);
@@ -48,7 +48,7 @@ public class P0049GroupAnagrams
             }
         };
     }
-    
+
     [Theory]
     [MemberData(nameof(Data))]
     public void Test(string[] strs, List<List<string>> expected)

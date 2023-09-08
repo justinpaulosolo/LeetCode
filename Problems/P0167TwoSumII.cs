@@ -5,9 +5,9 @@ public class P0001TwoSumII
     public int[] TwoSum(int[] numbers, int target)
     {
         for (var i = 0; i < numbers.Length; i++)
-        for (var j = i + 1; j < numbers.Length; j++)
-            if (numbers[i] + numbers[j] == target)
-                return new[] { i + 1, j + 1 };
+            for (var j = i + 1; j < numbers.Length; j++)
+                if (numbers[i] + numbers[j] == target)
+                    return new[] { i + 1, j + 1 };
         return new int[] { };
     }
 

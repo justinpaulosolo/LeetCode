@@ -1,5 +1,3 @@
-using System.Linq;
-
 namespace LeetCode.Problems;
 
 public class P0015ThreeSum
@@ -9,7 +7,7 @@ public class P0015ThreeSum
         var result = new List<IList<int>>();
 
         if (nums.Length <= 2) return result;
-        
+
         Array.Sort(nums);
 
         var start = 0;
@@ -20,16 +18,17 @@ public class P0015ThreeSum
             var left = start + 1;
             var right = nums.Length - 1;
 
-            while ( left < right)
+            while (left < right)
             {
                 if (nums[left] + nums[right] > target)
                 {
                     --right;
-                } else if (nums[left] + nums[right] < target)
+                }
+                else if (nums[left] + nums[right] < target)
                 {
                     ++left;
                 }
-                else 
+                else
                 {
                     var oneSolution = new List<int>() { nums[start], nums[left], nums[right] };
                     result.Add(oneSolution);
@@ -55,7 +54,7 @@ public class P0015ThreeSum
     {
         Assert.Equal(ThreeSum(nums), expected);
     }
-    
+
     public static IEnumerable<object[]> Data()
     {
         yield return new object[]

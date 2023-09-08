@@ -6,18 +6,21 @@ public class P0125ValidPalindrome
     {
         var str = s.ToLower();
         var left = 0;
-        var right = str.Length-1;
+        var right = str.Length - 1;
 
         while (left <= right)
         {
-            if(!char.IsLetterOrDigit(str[left]))
+            if (!char.IsLetterOrDigit(str[left]))
             {
                 left++;
-            } else if (!char.IsLetterOrDigit(str[right]))
+            }
+            else if (!char.IsLetterOrDigit(str[right]))
             {
                 right--;
-            } else {
-                if(str[left] != str[right]) return false;
+            }
+            else
+            {
+                if (str[left] != str[right]) return false;
 
                 left++;
                 right--;
