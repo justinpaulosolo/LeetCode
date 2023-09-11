@@ -4,15 +4,19 @@ public class P0121BestTimetoBuyandSellStock
 {
     public int MaxProfit(int[] prices)
     {
+        var buyPrice = int.MaxValue;
         var profit = 0;
-        var buyPrice = prices[0];
 
-        for (var i = 0; i < prices.Length; i++)
+        for (int i = 0; i < prices.Length; i++)
         {
-            profit = Math.Max(profit, prices[i] - buyPrice);
-            buyPrice = Math.Min(buyPrice, prices[i]);
+            if (prices[i] < buyPrice)
+            {
+                buyPrice = prices[i];
+            } else if (prices[i] - buyPrice > profit)
+            {
+                profit = prices[i] - buyPrice;
+            }
         }
-
         return profit;
     }
 

@@ -10,18 +10,11 @@ public class P0125ValidPalindrome
 
         while (left <= right)
         {
-            if (!char.IsLetterOrDigit(str[left]))
-            {
-                left++;
-            }
-            else if (!char.IsLetterOrDigit(str[right]))
-            {
-                right--;
-            }
+            if (!char.IsLetterOrDigit(str[left])) left++;
+            else if (!char.IsLetterOrDigit(str[right])) right--;
             else
             {
                 if (str[left] != str[right]) return false;
-
                 left++;
                 right--;
             }
