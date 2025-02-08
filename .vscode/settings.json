@@ -1,0 +1,8 @@
+{
+    "gihubt.copilot.enableFiles" : [
+        "**/LeeCode.Tests/**/*.cs",
+    ],
+    "gihubt.copilot.disabledFiles" : [
+        "**/LeeCode/**/*.cs",
+    ]
+}

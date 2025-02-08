@@ -1,0 +1,2 @@
+LeetCode/*.cs
+!LeetCode.Tests/*.cs
