@@ -23,6 +23,7 @@ public class ContainsDuplicateSolution
         }
 
         if (nums.Length != set.Count) return true;
+
         return false;
     }
 }
