@@ -1,13 +1,13 @@
 using Xunit;
 using LeetCode;
 
-public class SolutionTests
+public class TwoSumTests
 {
-    private readonly Solution _solution;
+    private readonly TwoSumSolution _solution;
 
-    public SolutionTests()
+    public TwoSumTests()
     {
-        _solution = new Solution();
+        _solution = new TwoSumSolution();
     }
 
     [Theory]

@@ -1,25 +1,47 @@
 using Xunit;
 using LeetCode;
 
-public class SolutionTests
+public class ContainsDuplicateTests
 {
-    private readonly _solution;
+    private readonly ContainsDuplicateSolution _solution;
 
-    public SolutionTests()
+    public ContainsDuplicateTests()
     {
-        _solution = new Solution();
+        _solution = new ContainsDuplicateSolution();
     }
 
     [Theory]
     [InlineData(new int[] { 1, 2, 3, 1 })]
-    [InlineData(new int[] { 1, 2, 3, 4 })]
     [InlineData(new int[] { 1, 1, 1, 3, 3, 4, 3, 2, 4, 2 })]
     public void ContainsDuplicate_ReturnsTrue(int[] nums)
     {
         // Act
-        var actual = _solution.ContainsDuplicate(nums);
+        var actual = _solution.containsDuplicate(nums);
 
         // Assert
         Assert.True(actual);
+    }
+
+    [Theory]
+    [InlineData(new int[] { 1, 2, 3, 1 })]
+    [InlineData(new int[] { 1, 1, 1, 3, 3, 4, 3, 2, 4, 2 })]
+    public void ContainsDuplicate2_ReturnsTrue(int[] nums)
+    {
+        // Act
+        var actual = _solution.containsDuplicate2(nums);
+
+        // Assert
+        Assert.True(actual);
+    }
+
+    [Theory]
+    [InlineData(new int[] { 1, 2, 3, 4 })]
+    public void ContainsDuplicate2_ReturnsFalse(int[] nums)
+    {
+        // Act
+        var actual = _solution.containsDuplicate2(nums);
+
+        // Assert
+        Assert.False(actual);
     }
 }
